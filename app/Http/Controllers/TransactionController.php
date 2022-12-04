@@ -10,7 +10,9 @@ class TransactionController extends Controller
 {
     //list 100 recent transactions
     public function index() {
-        $recents = Transaction::orderBy('created_at','DESC')->get();
+        $recents = Transaction::orderBy('created_at','DESC')
+            ->with('customer')
+            ->get();
 
         return response()->json([
             'recent'=> $recents
@@ -18,7 +20,7 @@ class TransactionController extends Controller
     }
 
     public function show(Transaction $transaction) {
-        $transaction->load('transactionItems');
+        $transaction->load('transactionItems')->load('customer');
         return response()->json($transaction);
     }
 
