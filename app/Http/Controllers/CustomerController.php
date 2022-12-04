@@ -17,6 +17,7 @@ class CustomerController extends Controller
     }
 
     public function show(Customer $customer) {
+        $customer->load('transactions');
         return response()->json($customer);
     }
 

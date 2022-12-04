@@ -11,4 +11,9 @@ class Item extends Model
 
     protected $fillable = ['barcode', 'name','description','price','quantity','units'];
 
+    public function transactionItems() {
+        return $this->hasMany('App\Models\TransactionItem')
+                ->orderBy('created_at','DESC');
+    }
+
 }

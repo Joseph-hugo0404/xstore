@@ -14,6 +14,7 @@ class ItemController extends Controller
     }
 
     public function show(Item $item) {
+        $item->load('transactionItems');
         return response()->json($item);
     }
 
