@@ -22,6 +22,7 @@ class ItemFactory extends Factory
             'description' => fake()->randomElement(["Nike","Adidas","World Balance","Puman","Fila","Reebok","Fila"]),
             'price' => fake()->numberBetween(10,999),
             'quantity' => fake()->numberBetween(10,500),
+            'units' => fake()->name,
         ];
-    }
+    }   
 }

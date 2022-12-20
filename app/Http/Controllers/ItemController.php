@@ -36,6 +36,7 @@ class ItemController extends Controller
             'units' => 'string|required',
             'price' => 'numeric|required',
             'quantity' => 'numeric|required',
+            'units' => 'string|required',
         ]);
 
         $item = Item::create($request->all());
