@@ -18,11 +18,10 @@ class ItemFactory extends Factory
     {
         return [
             'barcode' => fake()->ean13,
-            'name' => fake()->words(2,true),
-            'description' => fake()->words(6, true),
+            'name' => fake()->firstname,
+            'description' => fake()->randomElement(["Nike","Adidas","World Balance","Puman","Fila","Reebok","Fila"]),
             'price' => fake()->numberBetween(10,999),
             'quantity' => fake()->numberBetween(10,500),
-            'units' => fake()->randomElement(["pieces","grams","kilograms","bottles","boxes","litres","meters","inches","packs","bundles","gallons"])
         ];
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function index() {
-        $customers = Customer::orderBy('last_name')
+        $customers = Customer::orderBy('id')
             ->orderBy('first_name')->get();
 
         return response()->json([

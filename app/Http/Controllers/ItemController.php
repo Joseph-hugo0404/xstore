@@ -9,7 +9,7 @@ class ItemController extends Controller
 {
     public function index() {
         return response()->json([
-            'items' => Item::orderBy('name')->get()
+            'items' => Item::orderBy('id','asc')->get()
         ]);
     }
 

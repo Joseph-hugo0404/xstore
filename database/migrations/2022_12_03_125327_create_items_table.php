@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('price',10,2);
             $table->integer('quantity');
-            $table->string('units');
             $table->boolean('enabled')->default(true);
             $table->timestamps();
         });

@@ -39,3 +39,11 @@ Route::get('/transactions',[TransactionController::class, 'index']);
 Route::get('/transactions/{transaction}', [TransactionController::class, 'show']);
 Route::post('/transactions', [TransactionController::class, 'store']);
 Route::put('/transactions/{transaction}',[TransactionController::class, 'update']);
+
+Route::get('/dashboard', function() {
+    $allcustomers = Customer::count();
+    $items = Item::count();
+    $logs = Transaction::count();
+
+    return view('/dashboard', compact('allcustomers', 'items', 'logs'));
+});
